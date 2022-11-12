@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VRC Playtime Tracker</title>
+        <link rel="stylesheet" href="./styles/styles.css">
+        <script src="../renderer.js" defer></script>
+        <script src="./chart.js" defer></script>
+    </head>    
+    <body style="background-color: #1c1c1e; position: fixed;">
+        <div class="sidebar-top">
+            <button class="control-btn exit" id="close">&#x2715;</button>
+            <button class="control-btn" id="maximize">&#x2610;</button>
+            <!-- &#10064; -->
+            <button class="control-btn" id="minimize">&#8212;</button>
+        </div>
+        <div class="loader-container" id="loader">
+            <div class="loader"></div>
+            <a class="nodisplay" id="wfi-tag">Waiting for an internet connection.</a>
+        </div>
+        <div class="login-container nodisplay" id="login-container">
+            <div class="login" id="login">
+                <h1>Login</h1>
+                <div class="login-input">
+                    <img src="./account_box_FILL0_wght400_GRAD0_opsz48.png">
+                    <input placeholder="Username" id="usernameInput">
+                </div>
+                <div class="login-input">
+                    <img src="./password_FILL0_wght400_GRAD0_opsz48.png">
+                    <input placeholder="Password" type="password" id="passwordInput">
+                </div>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="remember-login">
+                        <span class="slider"></span>
+                    </label>
+                    <a>Remember Login <span style="color: red;">*UNSECURE</span></a>
+                </div>
+                <button id="submitAuth">Login</button>
+            </div>
+        </div>
+        <div class="sidebar nodisplay" id="sidebar">
+            <div class="sidebar-top">
+                <button id="settings-btn" class="btns-settings"><img id="settings-img" src="./settings_FILL0_wght400_GRAD0_opsz48.png"></button>
+            </div>
+            <div class="settings nodisplay" id="settings">
+                <div class="switch-container" style="margin-top: 10px;">
+                    <label class="switch">
+                        <input type="checkbox" id="settings-tray">
+                        <span class="slider"></span>
+                    </label>
+                    <a>Minimize to Tray</a>
+                </div>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="settings-sysstart">
+                        <span class="slider"></span>
+                    </label>
+                    <a>Start on System Startup</a>
+                </div>
+            </div>
+            <div class="" id="sidebar-main">
+                <button class="btns-single" id="usertag">Logged in as, User</button>
+                <button class="btns-quad btnsq-active" id="tracker-btn">
+                    <img src="./timer_FILL0_wght400_GRAD0_opsz48.png" class="tracker">
+                    <span>Tracker</span>
+                </button>
+                <button class="btns-quad" id="stats-btn">
+                    <img src="./bar_chart_FILL0_wght400_GRAD0_opsz48.png" class="statistics">
+                    <span>Statistics</span>
+                </button>
+                <button class="btns-quad">
+                    <img src="./group_FILL0_wght400_GRAD0_opsz48.png" class="friends">
+                    <span>Friends</span>
+                </button>
+                <button class="btns-quad">
+                    <img src="./account_box_FILL0_wght400_GRAD0_opsz48.png" class="profile">
+                    <span>Profile</span>
+                </button>
+                <button class="btns-single logout" id="logoutBtn" style="margin-top: 30px; height: 60px;">
+                    <img src="./logout_FILL0_wght400_GRAD0_opsz48.png">
+                </button>
+                <button class="btns-main" id="controlMain"><img src="./arrow.png" class="mainBtnImg"></button>
+            </div>
+        </div>
+        <div class="tracker nodisplay" id="tracker">
+            <div class="tracker-container center">
+                <h1 id="timer">00:00:00</h1>
+                <div class="tobottom">
+                    <a>Current Session: <span class="idle" id="user-session">00:00:00</span></a>
+                    <a>Websocket Connection Status: <span class="idle" id="ws-connection">Waiting...</span></a>
+                    <a>Last Websocket Update: <span class="idle" id="ws-update">None</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="statistics nodisplay" id="stats">
+            <div class="input-container">
+                <img src="./person_search_FILL0_wght400_GRAD0_opsz48.png">
+                <input id="stats-input" placeholder="Enter vrc user id.">
+            </div>
+            <a style="text-align: left; margin-left: calc((100% - 95%)/2); font-size: large; margin-top: 15px; margin-bottom: 15px;">Results For User: <span id="stats-userid" style="font-style: italic;">undefined</span></a>
+            <div class="statistics-container">
+                <div class="chart-container">
+                    <canvas id="chart"></canvas>
+                </div>
+                <a id="stats-total">Total Tracked Playtime: 00:00:00</a>
+                <a id="stats-14d">Tracked Playtime (Past 14d): 00:00:00</a>
+                <a id="stats-28d">Tracked Playtime (Past 28d): 00:00:00</a>
+                <a id="stats-longest">Longest Tracked Session: 00:00:00</a>
+            </div>
+        </div>
+    </body>
+</html>

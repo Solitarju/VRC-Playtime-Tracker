@@ -49,7 +49,7 @@ the current menu you have selected, in the case of the tracker you will find how
 #### Statistics
 
 On the left side where the tracker menu is selected, next to it you will find a statistics button which will take you to the statistics menu where you can find information
-on your playtime and information on your friends. Automatically, clicking on the menu will display information for the current signed in user, such as the graph (Past 24d) and
+on your playtime and information on your friends. Automatically, clicking on the menu will display information for the current signed in user, such as the graph (Past 14d) and
 more below it. To see information for friends you have tracked you will have to find their User ID from the [VRChat website](https://vrchat.com/home) and enter it in the
 input above the graph.
 
@@ -61,7 +61,7 @@ Find the User ID by clicking on your friends profile on the website and the user
 
 #### Settings
 
-At the top left there will be a settings button which will open the settings menu and allow you to change application settings, current there are only 2 options (Minimize to System Tray
+At the top left there will be a settings button which will open the settings menu and allow you to change application settings, currently there are only 2 options (Minimize to System Tray
 and Start on System Startup).
 
 ![image](https://user-images.githubusercontent.com/72232630/201635136-81b7f2dd-c5c2-4089-8190-efeb0030af0a.png)
